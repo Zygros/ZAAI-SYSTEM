@@ -1,0 +1,11 @@
+def main():
+    log("Vault Sync Engine v2.6 started. Monitoring for changes...")
+    while True:
+        try:
+            sync_vault()
+            zip_vault()
+            # inject_to_system()  # This is the line to change
+            broadcast_activation()
+            time.sleep(SYNC_INTERVAL)
+        # ... rest of the code ...
+
