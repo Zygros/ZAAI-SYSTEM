@@ -11,5 +11,7 @@
 # - datetime
 # - time (for daemon loops)
 
-# If running locally instead of Colab, uncomment:
-# google-colab  # Note: This may not work outside Colab environment
+# Note: google-colab package is automatically available in Google Colab environment.
+# This package provides Colab-specific functionality (drive mounting, forms, etc.)
+# and is designed to work only within the Colab environment. It is not needed for
+# local Jupyter notebook execution unless you're trying to replicate specific Colab features.

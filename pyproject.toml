@@ -32,7 +32,9 @@ Repository = "https://github.com/Zygros/ZAAI-SYSTEM"
 Issues = "https://github.com/Zygros/ZAAI-SYSTEM/issues"
 
 [tool.setuptools]
-packages = []  # This is primarily a notebook-based project
+# This is primarily a notebook-based project with no Python packages
+# If Python modules are added in the future, use: packages = find:
+packages = []
 
 [tool.black]
 line-length = 88

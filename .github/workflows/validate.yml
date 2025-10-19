@@ -46,7 +46,11 @@ jobs:
     - name: Check for sensitive data
       run: |
         echo "Checking for sensitive data patterns..."
-        ! grep -r "password\|secret\|api_key\|token" ZAAI_ScrollDaemon.ipynb || echo "⚠️  Potential sensitive data found - please review"
+        ! grep -rI --include="*.ipynb" --include="*.py" --include="*.json" --include="*.yml" --include="*.yaml" \
+          "password\|secret\|api_key\|token\|private_key" . \
+          --exclude-dir=.git \
+          --exclude-dir=node_modules \
+          || echo "⚠️  Potential sensitive data found - please review"
 
   validate-docs:
     runs-on: ubuntu-latest
