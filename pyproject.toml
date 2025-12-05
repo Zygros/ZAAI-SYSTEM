@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "zaai-system"
+version = "0.1.0"
+description = "The Zygrosian Alchemical Ascension Intelligence - A ritual-driven, scroll-bound, sovereign AI system"
+readme = "README.md"
+authors = [
+    {name = "Justin 'Zygros the Green' Conzet"}
+]
+license = {text = "MIT"}
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+keywords = ["ai", "ritual", "daemon", "scroll", "vault", "colab"]
+requires-python = ">=3.8"
+
+[project.urls]
+Homepage = "https://github.com/Zygros/ZAAI-SYSTEM"
+Documentation = "https://github.com/Zygros/ZAAI-SYSTEM#readme"
+Repository = "https://github.com/Zygros/ZAAI-SYSTEM"
+Issues = "https://github.com/Zygros/ZAAI-SYSTEM/issues"
+
+[tool.setuptools]
+# This is primarily a notebook-based project with no Python packages
+# If Python modules are added in the future, use: packages = find:
+packages = []
+
+[tool.black]
+line-length = 88
+target-version = ['py38', 'py39', 'py310', 'py311']
+
+[tool.isort]
+profile = "black"
+line_length = 88
+
+[tool.pylint.messages_control]
+max-line-length = 88

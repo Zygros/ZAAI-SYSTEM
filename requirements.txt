@@ -1,0 +1,17 @@
+# Core dependencies for ZAAI-SYSTEM
+# These are automatically available in Google Colab
+
+# For local development (if not using Colab):
+# jupyter>=1.0.0
+# ipython>=8.0.0
+
+# The notebook uses standard library modules:
+# - os
+# - json
+# - datetime
+# - time (for daemon loops)
+
+# Note: google-colab package is automatically available in Google Colab environment.
+# This package provides Colab-specific functionality (drive mounting, forms, etc.)
+# and is designed to work only within the Colab environment. It is not needed for
+# local Jupyter notebook execution unless you're trying to replicate specific Colab features.
