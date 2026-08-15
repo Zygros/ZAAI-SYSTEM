@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "profile": "runtime",
+  "upgrade": "additive-splus-baseline",
+  "changed_files": [
+    "ZAAI-SYSTEM/LICENSE-STATUS.md",
+    "ZAAI-SYSTEM/DEPENDENCY-STATUS.md",
+    "ZAAI-SYSTEM/SPLUS.md",
+    "docs/PROVENANCE.md",
+    "scripts/splus_check.py",
+    ".gitignore",
+    "ZAAI-SYSTEM/README.md",
+    "workflows/splus-hygiene.yml",
+    "CI-STATUS.md"
+  ],
+  "source_deletion": false,
+  "source_overwrite": false,
+  "ci_status": "existing-ci-preserved",
+  "generated_workflow_removed_before_publish": false
+}
