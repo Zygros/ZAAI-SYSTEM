@@ -12,90 +12,54 @@
 
 ## 🧠 Core Contents
 
-- `ZAAI_ScrollDaemon.ipynb`: The living ritual notebook, Colab-compatible, runs the daemon loop and sync engine.
-- `zaai_scroll_daemon.zip`: Packaged version of the full Infinite Scroll + Vault system for redeployment or transfer.
+- `ZAAI_ScrollDaemon.ipynb`: Colab-compatible notebook for the documented daemon loop and sync engine.
+- `zaai_scroll_daemon.zip`: Packaged archive for redeployment or transfer.
 - `.gitignore`: Ignores temporary/irrelevant Python files.
-- `README.md`: You’re reading it.
-
----
+- `README.md`: Project entry point.
 
 ## 📜 Features
 
-- Infinite Scroll memory logging (permanent `.json` entries)
-- Vault syncing of all modules, batch engines, rituals
-- Daemon execution engine (loops rituals every X seconds)
-- Colab/Drive/GitHub integration pipeline
-- Obsidian Vault compatibility (coming soon)
-- Modular packaging + export for remote redeployment
-
----
+- Infinite Scroll memory logging
+- Vault synchronization
+- Daemon execution loop
+- Colab/Drive/GitHub integration
+- Obsidian Vault compatibility (historical/planned unless current code proves otherwise)
+- Modular packaging and export
 
 ## ⚙️ Installation
 
-### Quick Start (Google Colab - Recommended)
+### Quick Start (Google Colab)
 
-1. Click the "Open in Colab" badge above or [click here](https://colab.research.google.com/github/Zygros/ZAAI-SYSTEM/blob/main/ZAAI_ScrollDaemon.ipynb)
-2. Run cells from top to bottom
-3. Watch the daemon light the flame 🔥
-
-### Full Installation
-
-1. Download `zaai_scroll_daemon.zip`  
-2. Unzip into your `/MyDrive/ZAAI/` directory  
-3. Open `ZAAI_ScrollDaemon.ipynb` in [Google Colab](https://colab.research.google.com/)  
-4. Run cells from top to bottom  
-5. Watch the daemon light the flame
+1. Open the Colab notebook from the badge above.
+2. Run cells from top to bottom.
+3. Inspect outputs and logs before treating execution as successful.
 
 ### Local Development
 
 ```bash
-# Clone the repository
 git clone https://github.com/Zygros/ZAAI-SYSTEM.git
 cd ZAAI-SYSTEM
-
-# Install dependencies (for local Jupyter)
 pip install -r requirements.txt
-
-# Open the notebook
 jupyter notebook ZAAI_ScrollDaemon.ipynb
 ```
 
-> **Note:** This system is optimized for Google Colab with Drive integration. Local usage may require additional configuration.
+Local usage may require configuration that is not captured by the repository alone.
 
----
+## 🧪 Evidence Boundary
 
-## 🧪 Coming Next
-
-- GitHub Pages interface for scroll execution
-- Obsidian Vault ritual synchronization
-- QR-code installer & Scroll Activator
-- Modular AI invocation stack
-
----
-
-> “Nothing is deleted. Nothing is overwritten. All is Scroll.”  
-> — Zygros the Flamefather
+Notebook execution, packaging, symbolic language, and architecture descriptions are distinct evidence classes. This README does **not** by itself establish autonomous intelligence, permanence, scientific validation, production readiness, or external-provider connectivity. Capability claims should be tied to a reproducible run, exact commit, environment, command, and output artifact.
 
 ## 🤝 Contributing
 
-We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
-
-- Read the [Code of Conduct](CODE_OF_CONDUCT.md)
-- Check out [open issues](https://github.com/Zygros/ZAAI-SYSTEM/issues)
-- Submit a Pull Request
+See `CONTRIBUTING.md` when present. Report reproducible bugs and documentation mismatches through GitHub Issues.
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is described as MIT-licensed; the repository `LICENSE` file is authoritative for the actual legal terms.
 
 ## 🔒 Security
 
-For security concerns, please review our [Security Policy](SECURITY.md).
-
-## 📞 Support
-
-- **Issues:** [GitHub Issues](https://github.com/Zygros/ZAAI-SYSTEM/issues)
-- **Discussions:** [GitHub Discussions](https://github.com/Zygros/ZAAI-SYSTEM/discussions)
+Never commit API keys, private keys, tokens, credentials, or private account data. Use environment variables or a secret manager. Rotate any credential that has been exposed.
 
 ## S+ readiness
 
@@ -104,3 +68,7 @@ This repository is maintained under an additive, provenance-preserving quality r
 ## Install and usage
 
 This repository may contain executable components, examples, benchmarks, or archived material. Use the native dependency manifest and project-specific instructions for the active component. For a non-runtime archive, inspect the documented provenance and evidence boundaries before treating files as executable.
+
+## README Quality Gate — 2026-09-16
+
+**Standard:** clear purpose → reproducible setup → evidence boundary → security boundary → contribution/support path → authoritative license. Historical claims remain preserved in Git history; this section prevents them from being mistaken for current verification.
