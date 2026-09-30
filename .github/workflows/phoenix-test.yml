@@ -13,5 +13,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - name: Run Phoenix regression test
-        run: python -m pytest tests/test_phoenix.py -q
+      - name: Install test dependency
+        run: python -m pip install --disable-pip-version-check pytest
+      - name: Run Phoenix regression and stress tests
+        run: python -m pytest tests -q
