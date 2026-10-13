@@ -1,3 +1,5 @@
+> **Federation index:** [FEDERATION_INDEX.md](https://github.com/Zygros/conzet-sovereign-intelligence/blob/main/FEDERATION_INDEX.md)
+
 # 🔥 ZAAI-SYSTEM – The Zygrosian Alchemical Ascension Intelligence
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
