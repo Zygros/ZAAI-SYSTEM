@@ -65,3 +65,24 @@ def test_sequential_stress_1000_cycles():
         assert len(path.read_text().splitlines()) == 3000
         audit = bot.ledger.verify_chain()
         assert audit == {"valid": True, "events": 3000, "error": None}
+
+
+def test_ledger_refuses_append_after_tampering():
+    with tempfile.TemporaryDirectory() as d:
+        path = Path(d) / "events.jsonl"
+        ledger = Ledger(str(path))
+        ledger.append("input", {"x": 1})
+        ledger.append("result", {"x": 2})
+
+        rows = path.read_text(encoding="utf-8").splitlines()
+        rows[0] = rows[0].replace('"x": 1', '"x": 999', 1)
+        tampered = "\n".join(rows) + "\n"
+        path.write_text(tampered, encoding="utf-8")
+
+        try:
+            Ledger(str(path))
+            assert False, "tampered ledger must fail closed during initialization"
+        except ValueError as exc:
+            assert "hash_mismatch:1" in str(exc)
+
+        assert path.read_text(encoding="utf-8") == tampered
