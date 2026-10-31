@@ -22,3 +22,15 @@ The suite includes the existing sequential 1,000-cycle stress test and the new f
 
 ## Evidence boundary
 This verifies the local hash-chain implementation's startup refusal when the existing file fails its current digest/link checks. It does not prevent a privileged actor from rewriting the entire ledger and recomputing hashes, provide multi-writer locking or fsync durability, establish an external signature/timestamp, or prove production deployment. PR #2 remains open and unmerged.
+
+
+## Evidence-file chronology addendum
+The initial code/test verification above ran on head `1371dadfe481dc882377d4f61180fa00389f73af`. The paired evidence files were then appended without changing the runtime or test logic:
+- Markdown evidence commit: `cd5866a2c2ca2cb8433fdf15470bb502f8e7467f`
+- JSON receipt commit: `61ce4eeeb9f73e3d96dabedd7eb03a07196aa9c4`
+
+The evidence-bearing head `61ce4eeeb9f73e3d96dabedd7eb03a07196aa9c4` was rechecked:
+- Phoenix Bot Tests run `41233446600`: SUCCESS, **6 passed in 0.17s**.
+- Phoenix Audit run `41233446244`: SUCCESS.
+
+The earlier test run remains a valid observation on the earlier code/test head; the later runs validate the evidence-bearing head.
