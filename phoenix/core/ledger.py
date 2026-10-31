@@ -16,6 +16,9 @@ class Ledger:
     def __init__(self, path="ledger/events.jsonl"):
         self.path = Path(path)
         self.path.parent.mkdir(parents=True, exist_ok=True)
+        audit = self.verify_chain()
+        if not audit["valid"]:
+            raise ValueError(f"Ledger verification failed: {audit['error']}")
         self._last_hash = self._read_last_hash()
         self._sequence = self._read_sequence()
 
