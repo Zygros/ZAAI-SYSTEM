@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "phoenix_ledger_startup_guard",
+  "date": "2026-10-31",
+  "repository": "Zygros/ZAAI-SYSTEM",
+  "source_pr": {
+    "number": 2,
+    "url": "https://github.com/Zygros/ZAAI-SYSTEM/pull/2",
+    "state": "open",
+    "merged": false
+  },
+  "branch": "phoenix-bot-bootstrap",
+  "code_commit": "4209ea883181629b310511e44e7d1007e00e00ee",
+  "test_commit": "1371dadfe481dc882377d4f61180fa00389f73af",
+  "evidence_commit": "cd5866a2c2ca2cb8433fdf15470bb502f8e7467f",
+  "change": {
+    "file": "phoenix/core/ledger.py",
+    "behavior": "Verify the existing hash chain during Ledger initialization and raise ValueError before appending if invalid.",
+    "regression": "Tamper with the first event, expect hash_mismatch:1 on initialization, and assert the tampered file remains unchanged."
+  },
+  "verification": {
+    "phoenix_bot_tests": {
+      "run_id": 41233397444,
+      "url": "https://github.com/Zygros/ZAAI-SYSTEM/actions/runs/41233397444",
+      "conclusion": "success",
+      "result": "6 passed in 0.12s"
+    },
+    "phoenix_audit": {
+      "run_id": 41233397451,
+      "url": "https://github.com/Zygros/ZAAI-SYSTEM/actions/runs/41233397451",
+      "conclusion": "success"
+    }
+  },
+  "limitations": [
+    "PR #2 remains open and unmerged.",
+    "Hash chains do not prevent privileged full-file rewrite and rehash.",
+    "No multi-writer locking or fsync durability guarantee is added.",
+    "No external signature, OpenTimestamps proof, Bitcoin confirmation, or Arweave anchor is claimed.",
+    "No production deployment is claimed."
+  ]
+}
