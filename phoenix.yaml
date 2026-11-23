@@ -1,0 +1,12 @@
+version: 0.1.0-omega
+name: Phoenix Bot
+law: ALWAYS_ADD_NEVER_TAKE
+verification:
+  required: true
+ledger:
+  append_only: true
+  path: ledger/events.jsonl
+executor:
+  default_mode: dry_run
+permissions:
+  default: []
