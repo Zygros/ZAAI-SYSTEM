@@ -43,13 +43,19 @@ class PhoenixAnchorPureFunctionTests(unittest.TestCase):
         ).hexdigest())
         run.assert_not_called()
 
-    def test_import_and_pure_methods_do_not_write_anchor_ledger(self):
-        ledger = Path(self.temp.name) / "ledger.json"
+    def test_pure_methods_do_not_open_any_file_for_writing(self):
         anchor = PhoenixBlockchainAnchor()
-        anchor.compute_sha256(str(self.path))
-        anchor.create_anchor_payload(str(self.path), "read-only test")
-        anchor.anchor_to_solana_pda({"file_hash": "abc"})
-        self.assertFalse(ledger.exists())
+        with patch("builtins.open", wraps=open) as open_mock:
+            anchor.compute_sha256(str(self.path))
+            anchor.create_anchor_payload(str(self.path), "read-only test")
+            anchor.anchor_to_solana_pda({"file_hash": "abc"})
+        write_modes = [
+            call.args[1] if len(call.args) > 1 else call.kwargs.get("mode", "r")
+            for call in open_mock.call_args_list
+            if any(flag in (call.args[1] if len(call.args) > 1 else call.kwargs.get("mode", "r"))
+                   for flag in ("w", "a", "x", "+"))
+        ]
+        self.assertEqual(write_modes, [])
 
 
 if __name__ == "__main__":
